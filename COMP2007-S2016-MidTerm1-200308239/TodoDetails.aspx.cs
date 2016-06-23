@@ -9,6 +9,12 @@ using COMP2007_S2016_MidTerm1_200308239.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 
+/**
+        * @authorname: parvati
+        * @method: This page will display detailed Todo list
+        
+        */
+
 namespace COMP2007_S2016_MidTerm1_200308239
 {
     public partial class TodoDetails : System.Web.UI.Page

@@ -9,10 +9,17 @@ using COMP2007_S2016_MidTerm1_200308239.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 
+/**
+        * @authorname: parvati
+        * @method: This page will display The Todo list
+        
+        */
+
 namespace COMP2007_S2016_MidTerm1_200308239
 {
     public partial class TodoList : System.Web.UI.Page
     {
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,11 +51,7 @@ namespace COMP2007_S2016_MidTerm1_200308239
                 TodoGridView.DataBind();
             }
         }
-        /**
-         * @authorname: parvati
-         * @method 
-         * @returns {void}
-         */
+       
 
 
 
