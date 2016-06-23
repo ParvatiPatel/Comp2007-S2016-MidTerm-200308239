@@ -15,5 +15,29 @@ namespace COMP2007_S2016_MidTerm1_200308239
 
         }
 
+        protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TodoGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        protected void TodoGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void TodoGridView_Sorting(object sender, GridViewSortEventArgs e)
+        {
+
+        }
+
+        protected void TodoGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
     }
 }
