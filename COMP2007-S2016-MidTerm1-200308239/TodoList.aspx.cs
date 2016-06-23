@@ -45,11 +45,12 @@ namespace COMP2007_S2016_MidTerm1_200308239
             }
         }
 
+       
 
 
-   
 
-    protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             
             TodoGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
