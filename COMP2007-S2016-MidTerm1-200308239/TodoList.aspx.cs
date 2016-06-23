@@ -27,14 +27,7 @@ namespace COMP2007_S2016_MidTerm1_200308239
             }
         }
 
-        /**
-         * <summary>
-         * This method gets the student data from the DB
-         * </summary>
-         * 
-         * @method GetStudents
-         * @returns {void}
-         */
+        
         protected void GetTodo()
         {
             // connect to EF
