@@ -26,15 +26,15 @@ namespace COMP2007_S2016_MidTerm1_200308239
             // populate teh form with existing data from the database
             int TodoID = Convert.ToInt32(Request.QueryString["TodoID"]);
 
-            // connect to the EF DB
+            // connect to the tc DB
             using (TodoConnection tc = new TodoConnection())
             {
-                // populate a student object instance with the StudentID from the URL Parameter
+                // populate a todo object instance with the TodoID
                 Todo updatedTodo = (from Todo in tc.Todos
                                           where Todo.TodoID == TodoID
                                           select Todo).FirstOrDefault();
 
-                // map the student properties to the form controls
+                // maps todo properties  the form controls
                 if (updatedTodo != null)
                 {
                     TodoNameTextBox.Text = updatedTodo.TodoName;
@@ -48,6 +48,7 @@ namespace COMP2007_S2016_MidTerm1_200308239
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
+            // Redirect back to Todo page
             Response.Redirect("~/TodoList.aspx");
         }
 
@@ -65,18 +66,18 @@ namespace COMP2007_S2016_MidTerm1_200308239
                     // get the id from the URL
                     TodoID = Convert.ToInt32(Request.QueryString["TodoID"]);
 
-                    // get the current student from EF DB
+                    // get the current Todo from tc Database
                     newTodo = (from Todo in tc.Todos
                                   where Todo.TodoID == TodoID
                                   select Todo).FirstOrDefault();
                 }
 
-                // add form data to the new student record
+                // add new Todo record
                 newTodo.TodoName = TodoNameTextBox.Text;
                 newTodo.TodoNotes = TodoNotesTextBox.Text;
                 
 
-                // use LINQ to ADO.NET to add / insert new student into the database
+                // use LINQ to ADO.NET to add / insert new Todo List into the database
 
                 if (TodoID == 0)
                 {
@@ -87,7 +88,7 @@ namespace COMP2007_S2016_MidTerm1_200308239
                 
                 tc.SaveChanges();
 
-                // Redirect back to the updated students page
+                // Redirect back to the updated Todo page
                 Response.Redirect("~/TodoList.aspx");
             }
 

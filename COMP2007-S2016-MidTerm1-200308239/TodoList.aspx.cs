@@ -30,12 +30,12 @@ namespace COMP2007_S2016_MidTerm1_200308239
         
         protected void GetTodo()
         {
-            // connect to EF
+            // connect to tc
             using (TodoConnection tc = new TodoConnection())
             {
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
 
-                // query the Students Table using EF and LINQ
+                // query the todo Table 
                 var Todo = (from allTodo in tc.Todos
                                 select allTodo);
 
@@ -44,8 +44,13 @@ namespace COMP2007_S2016_MidTerm1_200308239
                 TodoGridView.DataBind();
             }
         }
+        /**
+         * @authorname: parvati
+         * @method 
+         * @returns {void}
+         */
 
-       
+
 
 
 
@@ -62,7 +67,8 @@ namespace COMP2007_S2016_MidTerm1_200308239
 
         protected void TodoGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            
+
+            // store which row was clicked
             int selectedRow = e.RowIndex;
 
             
